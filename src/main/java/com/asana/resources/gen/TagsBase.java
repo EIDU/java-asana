@@ -1,6 +1,7 @@
 package com.asana.resources.gen;
 
 import com.asana.Client;
+import com.asana.models.Task;
 import com.asana.resources.Resource;
 import com.asana.models.Tag;
 import com.asana.requests.ItemRequest;
@@ -135,9 +136,9 @@ public class TagsBase extends Resource {
      * @param  tag The tag to fetch tasks from.
      * @return Request object
      */
-    public CollectionRequest<Tag> getTasksWithTag(String tag) {
+    public CollectionRequest<Task> getTasksWithTag(String tag) {
     
         String path = String.format("/tags/%s/tasks", tag);
-        return new CollectionRequest<Tag>(this, Tag.class, path, "GET");
+        return new CollectionRequest<Task>(this, Task.class, path, "GET");
     }
 }
